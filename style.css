@@ -1,0 +1,379 @@
+:root{
+    /* Primary */
+    --LimeGreen-: 163, 72%, 41%;
+    --BrightRed-: 356, 69%, 56%;
+    --Facebook-: 208, 92%, 53%;
+    --Twitter-: 203, 89%, 53%;
+    --InstagramLinear1-: 37, 97%, 70%; 
+    --InstagramLinear1-: 329, 70%, 58%;
+    --YouTube-: 348, 97%, 39%;
+
+    /* Dark Theme */
+    --ToggleLinear1-: 210, 78%, 56%;
+    --ToggleLinear2-: 146, 68%, 55%;
+    --VeryDarkBlueBG-: 230, 17%, 14%;
+    --VeryDarkBlueTopBGPattern-: 232, 19%, 15%;
+    --DarkDesaturatedBlueCardBG-: 228, 28%, 20%;
+    --DesaturatedBlueText-: 228, 34%, 66%;
+    --WhiteText-: 0, 0%, 100%;
+
+    /* Light Theme */
+    --Toggle-: 230, 22%, 74%;
+    --WhiteBG-: 0, 0%, 100%;
+    --VeryPaleBlueTopBGPattern-: 225, 100%, 98%;
+    --LightGrayishBlueCardBG-: 227, 47%, 96%;
+    --DarkGrayishBlueText-: 228, 12%, 44%;
+    --VeryDarkBlueText-: 230, 17%, 14%;
+}
+
+    .attribution { font-size: 11px; text-align: center; margin-top: 20px; color: #fff;}
+    .attribution a { color: hsl(228, 45%, 44%); text-decoration: none;}
+
+*, *::before, *::after{
+    box-sizing:  border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+
+.container{
+    height: 100%;
+    background-color: hsl(var(--VeryDarkBlueBG-));
+    transition: all .5s ease-in-out;
+    padding-bottom: 50px;
+}
+.container.lightBG{
+    background-color: hsl(var(--WhiteBG-));
+}
+.topSection{
+    height: 45vh;
+    background: hsl(var(--VeryDarkBlueTopBGPattern-));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding:0px 150px 0px;
+    transition: all .5s ease-in-out;
+    margin-top: -100px;
+}
+.topSection.lightCardBG{
+    background-color: hsl(var(--VeryPaleBlueTopBGPattern-));
+}
+.topSection-left > h1{
+    padding-bottom: 10px;
+    color: hsl(var(--WhiteText-));
+    font-weight: 400;
+    font-size: 28px;
+    transition: all .5s ease-in-out;
+}
+.topSection-left > h1.headerText{
+    color: hsl(var(--VeryDarkBlueText-));
+}
+.topSection-left > p{
+    color: hsl(var(--DesaturatedBlueText-));
+    font-size: 12px;
+}
+.none{
+    display: none;
+}
+.topSection-right{
+    display: flex;
+    align-items: center;
+}
+.topSection-right > p{
+    padding-right: 15px;
+    font-size: 12px;
+    color: hsl(var(--DesaturatedBlueText-));
+}
+.topSection-right-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.label{
+    width: 50px;
+    height: 26px;
+    display: flex;
+    border-radius: 50px;
+    background: linear-gradient(to right,rgb(55, 143, 230), rgb(62, 218, 130));
+    padding: 5px;
+    position: relative;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.label.linearBG{
+    background: hsl(var(--Toggle-));
+}
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+.ball{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background: hsl(var(--VeryDarkBlueBG-));
+    transition: all .5s ease;
+}
+.ball.toggleBG{
+    background-color: hsl(var(--WhiteBG-));
+}
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+
+
+.stats{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: -75px;
+    margin-bottom: 20px;
+    padding: 0px 150px;
+}
+.statsCard{
+    width: 23.5%;
+    background-color: hsl(var(--DarkDesaturatedBlueCardBG-));
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.statsCard:hover{
+    background-color: hsl(var(--DarkGrayishBlueText-));
+}
+.statsCard.lightCardBG{
+    background-color: hsl(var(--LightGrayishBlueCardBG-));
+}
+.statsCard.lightCardBG:hover{
+    background-color: hsl(var(--Toggle-));
+}
+.statsCard-logo{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.statsCard-logo > img{
+    width: 18px;
+    margin: 0px 3px;
+}
+.statsCard-logo > p{
+    color: hsl(var(--DesaturatedBlueText-));
+    margin: 0px 3px;
+    font-size: 11px;
+    font-weight: 300;
+}
+.statsCard-value{
+    padding-bottom: 20px;
+}
+.statsCard-value > h1{
+    font-size: 40px;
+    text-align: center;
+    color: hsl(var(--WhiteText-));
+    font-weight: 400;
+    padding-bottom: 7px;
+    transition: all .5s ease-in-out;
+}
+.statsCard-value > h1.mainTextDark{
+    color: hsl(var(--VeryDarkBlueText-));
+}
+.statsCard-value > p{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: hsl(var(--DesaturatedBlueText-));
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+.statsCard-percent{
+    display: flex;
+    align-items: center;
+}
+.statsCard-percent > img{
+    margin: 0px 2px;
+}
+.statsCard-percent > p{
+    font-size: 11px;
+    margin: 0px 2px;
+    color: hsl(var(--LimeGreen-));
+}
+.redPercent > p{
+    color: hsl(var(--BrightRed-));
+}
+.stats > div:nth-child(1){
+    border-top: 3px solid hsl(var(--Facebook-));
+}
+.stats > div:nth-child(2){
+    border-top: 3px solid hsl(var(--Twitter-));
+}
+.stats > div:nth-child(3){
+    position: relative;
+}
+.stats > div:nth-child(3):after{
+    position: absolute;
+    height: 3px;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+.stats > div:nth-child(4){
+    border-top: 3px solid hsl(var(--YouTube-));
+}
+
+
+.overview{
+    padding: 0px 150px;
+    margin-top: 20px;
+}
+.overview > p{
+    padding-bottom: 10px;
+    color: hsl(var(--WhiteText-));
+    font-weight: 400;
+    font-size: 28px;
+    transition: all .5s ease-in-out;
+}
+.overview > p.overviewText{
+    color: hsl(var(--DarkGrayishBlueText-));
+}
+
+
+.bottomStats{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 150px;
+}
+.bottomStats-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.bottomStatsCard{
+    background-color: hsl(var(--DarkDesaturatedBlueCardBG-));
+    width: 23.5%;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.bottomStatsCard:hover{
+    background-color: hsl(var(--DarkGrayishBlueText-));
+}
+.bottomStatsCard.lightCardBG{
+    background-color: hsl(var(--LightGrayishBlueCardBG-));
+}
+.bottomStatsCard.lightCardBG:hover{
+    background-color: hsl(var(--Toggle-));
+}
+.bottomStatsCard-top, .bottomStatsCard-down{
+    display: flex;
+    justify-content: space-between;
+}
+.bottomStatsCard-top{
+    margin-bottom: 20px;
+}
+.bottomStatsCard-top > p{
+    color: hsl(var(--DesaturatedBlueText-));
+    font-size: 12px;
+    font-weight: 600;
+}
+.bottomStatsCard-top > img{
+    width: 18px;
+}
+.bottomStatsCard-down > p{
+    font-size: 28px;
+    color: hsl(var(--WhiteText-));
+    transition: all .5s ease-in-out;
+}
+.bottomStatsCard-down > p.mainTextDark{
+    color: hsl(var(--VeryDarkBlueText-));
+}
+.percent{
+    display: flex;
+    align-items: center;
+}
+.greenText{
+    color: hsl(var(--LimeGreen-));
+    font-size: 10px;
+    margin: 0px 2px;
+}
+.percent > img{
+    mask-image: 0px 2px;
+}
+.redText{
+    color: hsl(var(--BrightRed-));
+    font-size: 10px;
+    margin: 0px 2px;
+}
+
+
+
+
+@media (max-width: 425px){
+    .container{
+        width: 100%;
+    }
+    .topSection{
+        height: 60%;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        padding: 40px 40px 100px;
+        margin: 0;
+    }
+    .topSection-left > p{
+        font-size: 14px;
+    }
+    .none{
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: hsl(var(--DesaturatedBlueText-));;
+        margin: 30px 0;
+    }
+    .topSection-right{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .topSection-right > p{
+        font-size: 14px;
+    }
+    .stats{
+        margin: -60px 0 0 0;
+        flex-direction: column;
+        padding: 0 40px;
+    }
+    .statsCard{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .overview{
+        padding: 0 40px;
+        margin-bottom: 20px;
+    }
+    .bottomStats{
+        padding: 0px 40px;
+    }
+    .bottomStats-row{
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .bottomStatsCard{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
